@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "source": "Derived without modifying the canonical manifest",
+  "canonical": {
+    "environment": "robinhood-mainnet",
+    "chainId": 4663,
+    "candidateId": "B6PW-NEXTGEN-010P-RECOVERY",
+    "candidateHash": "400d3bd0c2c6835902a255e8dc1aeae3ee284c94c532c6d2b54285d8540a5b28",
+    "generationId": "0x9bdba15f79a2a534825717b5cd4285b78ec7e232c9610419fd6222476b4c092d",
+    "sourceClosure": {
+      "hash": "sha256:8573ba698181bbb1aa453eccb2a1df55d4bd446954a76931c66e66c4ee7fec4d",
+      "fileCount": 36,
+      "includedPaths": [
+        "contracts/v2/nextgen/src",
+        "contracts/v2/nextgen/interfaces",
+        "contracts/v2/nextgen/libraries"
+      ],
+      "specificationArtifactsRequired": false,
+      "excludedPaths": [
+        "frontend",
+        "Vercel",
+        "preview evidence",
+        "temporary tests",
+        "local caches",
+        "historical candidates",
+        "private evidence"
+      ],
+      "recomputedFromCurrentFormalClosure": true
+    },
+    "compiler": {
+      "solc": "0.8.24",
+      "optimizer": true,
+      "optimizerRuns": 200,
+      "viaIR": false,
+      "evmVersion": "paris"
+    },
+    "verification": {
+      "sourceToMainnetRuntime": "12/12",
+      "ethGetCodeRecheck": "PASS",
+      "reproducibleBuild": "PASS",
+      "abiMatch": "12/12",
+      "interfaceMatch": "PASS",
+      "noProductionMutation": true
+    }
+  },
+  "historicalMainnetReadback": {
+    "evidence": "B6PW-OSS-PREPUBLISH-FINAL-CLOSURE-013/MAINNET_RUNTIME_RECHECK_013.json",
+    "checkedAtUtc": "2026-10-08T00:53:50.059Z",
+    "checkedAtBlock": "82909508",
+    "readMethod": "eth_getCode",
+    "rpcEndpoint": "Robinhood Official Public RPC",
+    "contractsMatched": "12/12"
+  },
+  "publicSourceCount": 5,
+  "totalCanonicalContracts": 12,
+  "contracts": [
+    {
+      "order": 1,
+      "alias": "GovernanceConfig",
+      "contract": "B6PWGovernanceConfigNG",
+      "address": "0xf4638886f1B66C4C8F829acDa02d7bFC21f72812",
+      "runtimeKeccak256": "0x276be91e609a05fd911fe18e64ac8e51e64649018e2ccffafacbaecc1b2cf195",
+      "runtimeBytes": 24149,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 2,
+      "alias": "OwnershipCore",
+      "contract": "B6PWOwnershipCoreNG",
+      "address": "0xB74D1A08Ce58a8818ddF24e9861597fEaC05E775",
+      "runtimeKeccak256": "0xb2269015dbdb32f7a949ff6ba7a1eb99580a722c3ca0fdfbd2206b5c68dbc518",
+      "runtimeBytes": 15866,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 3,
+      "alias": "StakeLedger",
+      "contract": "B6PWStakeLedgerNG",
+      "address": "0x7E4D8c42EB06DA7eE3d0B88A31604eDa78C77341",
+      "runtimeKeccak256": "0xaba8f6256a261653a5ffd404ea7e330ca7fba8545a2f87d2be85365caa36275b",
+      "runtimeBytes": 24393,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 4,
+      "alias": "SettlementKernel",
+      "contract": "B6PWSettlementKernelNG",
+      "address": "0x8FdC97A4e91Aa4C5e1345d928CA1F8D36A1edF79",
+      "runtimeKeccak256": "0x5c1e5b4d147032aa87ecef92e9e0e68dd6f9d228bf17210ae15850bbc82cdeb6",
+      "runtimeBytes": 18297,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 5,
+      "alias": "PlatformAccountingKernel",
+      "contract": "B6PWPlatformAccountingKernelNG",
+      "address": "0x5907Bd3F537136DE5d0bba68903E33F6205ad88d",
+      "runtimeKeccak256": "0x5dab970490dce8d95145f30753fb4fd1dc5d55f070e9bc78a5a8374899ca1cd0",
+      "runtimeBytes": 16680,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 6,
+      "alias": "QuotePolicyHub",
+      "contract": "B6PWQuotePolicyHubNG",
+      "address": "0x479de0be528F09feC7201aa267F9233308Dcb216",
+      "runtimeKeccak256": "0x03bd7d72b803a00aba55bc539cb9983fec653cdad8e6ae350bb27caf12a1403a",
+      "runtimeBytes": 9916,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWQuotePolicyHubNG.sol",
+      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+    },
+    {
+      "order": 7,
+      "alias": "OracleDirectory",
+      "contract": "B6PWOracleDirectoryNG",
+      "address": "0xD6369c9557e6c5cCB9bF506cEa2EaF28718782E4",
+      "runtimeKeccak256": "0x3cb35cb5c9d85643c903a6fa8283e7d24c3868e716521e5751f4b7a137337b71",
+      "runtimeBytes": 6048,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWOracleDirectoryNG.sol",
+      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+    },
+    {
+      "order": 8,
+      "alias": "SpotSource",
+      "contract": "B6PWSpotSourceNG",
+      "address": "0xd665C56e2c4Da5e12F548cebd13fc064Ad2C9293",
+      "runtimeKeccak256": "0xd2f014ed954bdb9878972f1c381cf46157fd9128384c5ef28b9a45c0fe016b95",
+      "runtimeBytes": 4578,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWSpotSourceNG.sol",
+      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+    },
+    {
+      "order": 9,
+      "alias": "ETHUSDAdapter",
+      "contract": "B6PWChainlinkETHUSDAdapterNG",
+      "address": "0xDa230c98c9B418e6A504771AbdFF2F613592a977",
+      "runtimeKeccak256": "0x636df45aa78301617a01655f2c8c2a1bf1681f3040f2409a1707d178fd07066a",
+      "runtimeBytes": 3178,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWChainlinkETHUSDAdapterNG.sol",
+      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+    },
+    {
+      "order": 10,
+      "alias": "MarketBusiness",
+      "contract": "B6PWMarketBusinessNG",
+      "address": "0x4A9B3967c1E2736007Ba91DEc2C5303Da380c6fd",
+      "runtimeKeccak256": "0xd14c8b4bdedfc027eab8b97462e6ff11716798460b766ece6a51a4766b709e06",
+      "runtimeBytes": 844,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWMarketBusinessNG.sol",
+      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+    },
+    {
+      "order": 11,
+      "alias": "BatchOperator",
+      "contract": "B6PWPlatformBatchOperatorNG",
+      "address": "0x9D3CB2A4C6377Ae9BC00a116f4De6aa1765D2e3E",
+      "runtimeKeccak256": "0x5dab133bbf794a9e6263798fb4793a485c06eb3424e3347b3809c477349d4f2d",
+      "runtimeBytes": 2932,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    },
+    {
+      "order": 12,
+      "alias": "Custody",
+      "contract": "B6PWCustodyNG",
+      "address": "0xE52293Ff6B91cF29da45094F93f38A6216902845",
+      "runtimeKeccak256": "0xf71d5056db48bf8cc8cd655a3c3c4a852ebf996535b6f45011e466d5221865f3",
+      "runtimeBytes": 5217,
+      "status": "CANONICAL_MAINNET",
+      "sourcePublished": false,
+      "sourcePath": null,
+      "sourceVerification": "Source intentionally excluded from candidate"
+    }
+  ]
+}
