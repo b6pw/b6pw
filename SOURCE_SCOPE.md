@@ -1,20 +1,22 @@
-# Source scope and exclusion review
+# B6PW source scope and exclusion review
 
-This file records the reviewed boundary for the unpublished local candidate.
-Source decisions apply to complete Solidity files; no deployed source was
-edited, redacted, or represented as a modified chain-matching version. The user
-has expressly approved the platform-origin and special-stake paths present in
-the eight included canonical implementations, plus the exact compile-required
-interface declarations described below. That approval does not extend to the
-four omitted implementations or private operational tooling.
+This file records the approved scope for this 33-file, partial-source release:
+8 of the 12 deployed contract implementations, 16 compile-required interfaces,
+3 libraries, and the reviewed release documentation/configuration. Source
+decisions apply to complete Solidity files; no deployed source was edited,
+redacted, or represented as a modified chain-matching version. The user has
+approved the platform-origin and special-stake paths present in the eight
+included canonical implementations, plus the exact compile-required interface
+declarations described below. That approval does not extend to the four
+excluded implementations or private operational tooling.
 
 ## Twelve canonical deployed contracts
 
-| Contract | Candidate status | Review reason / consequence |
+| Contract | Release scope | Review reason / consequence |
 | --- | --- | --- |
-| `B6PWOwnershipCoreNG` | Included in this local expansion candidate | Exact deployed source includes the `createPlatform` entry used by PlatformAccountingKernel to create platform-origin records. It is included unmodified under the user's explicit local candidate scope; that code path is visible and must be included in final user review. |
-| `B6PWStakeLedgerNG` | Included in this local expansion candidate | Exact deployed source includes platform-origin and shared-special-stake accounting branches. It is included unmodified under the user's explicit local candidate scope; no batch-registration implementation is present in this file. |
-| `B6PWSettlementKernelNG` | Included in this local expansion candidate | Exact deployed source includes platform-origin listing/transfer invariants and generation metadata. It is included unmodified; no source-level redaction or claim of a modified chain-matching version is made. |
+| `B6PWOwnershipCoreNG` | Included in the approved 8/12 source release | Exact deployed source includes the `createPlatform` entry used by PlatformAccountingKernel to create platform-origin records. It is included unmodified within the user's approved source scope; that code path is visible and identified for user review. |
+| `B6PWStakeLedgerNG` | Included in the approved 8/12 source release | Exact deployed source includes platform-origin and shared-special-stake accounting branches. It is included unmodified within the user's approved source scope; no batch-registration implementation is present in this file. |
+| `B6PWSettlementKernelNG` | Included in the approved 8/12 source release | Exact deployed source includes platform-origin listing/transfer invariants and generation metadata. It is included unmodified; no source-level redaction or claim of a modified chain-matching version is made. |
 | `B6PWPlatformAccountingKernelNG` | Excluded — private | Contains Registrar, special-stake, batch nonce, authorization validation and batch creation implementation, as well as other platform accounting/custody logic in the same contract. |
 | `B6PWGovernanceConfigNG` | Excluded — private | Contains ordinary governance/oracle configuration and platform batch-operator role/module and batch-policy controls in one deployed implementation. |
 | `B6PWQuotePolicyHubNG` | Included | Quote-policy module; no platform batch registration implementation in this source file. |
@@ -38,8 +40,9 @@ that the eight selected contracts retain canonical source-unit names and build
 metadata. They are interfaces, enums, data structures, events, errors, or
 stateless libraries; none implements `createBatch`, `batchCreate`, Registrar
 signature validation, batch iteration, or platform registration operations.
-All interface declarations listed here are within the user's approved local
-candidate scope; this does not approve the underlying private implementations:
+All interface declarations listed here are within the user's approved
+8-contract source-release scope; this does not approve the underlying private
+implementations:
 
 - Interfaces: `ICustody.sol`, `IEthUsdSourceBinding.sol`,
   `IGenerationIdentity.sol`, `IGovernanceConfig.sol`, `IMarketBusiness.sol`,
@@ -54,7 +57,7 @@ candidate scope; this does not approve the underlying private implementations:
 `NextGenEvents.sol` includes batch/platform event declarations; and
 `IGovernanceConfig.sol` includes module/policy interface declarations. These
 are ABI-level disclosures, not executable batch-registration logic. Their
-inclusion here is explicitly approved for this local eight-contract candidate.
+inclusion here is explicitly approved for this 8-contract source release.
 
 The three newly necessary interfaces `IOwnershipCore.sol`,
 `ISettlementKernel.sol`, and `IStakeLedger.sol` expose the peer-core ABI used by
