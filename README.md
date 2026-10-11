@@ -1,26 +1,23 @@
-# B6PW Mainnet Smart Contracts — Public Subset Candidate
+# B6PW Mainnet Smart Contracts — Open-Source Subset
 
-This is a local, unpublished review candidate for the intended repository
-[`b6pw/b6pw`](https://github.com/b6pw/b6pw). It contains eight complete contract
-implementations from the canonical Robinhood Mainnet generation. It does **not**
-publish all twelve deployed contract implementations and must not be described
-as a complete 12/12 source release.
+This repository publishes the complete Solidity implementations of eight of
+B6PW’s twelve deployed contract implementations on Robinhood Mainnet. It is a
+partial source release: it does not publish all twelve implementations or the
+complete B6PW platform source.
 
 ## Canonical deployment
 
-- Chain ID: `4663` (Robinhood Mainnet)
-- Candidate: `400d3bd0c2c6835902a255e8dc1aeae3ee284c94c532c6d2b54285d8540a5b28`
-- Generation: `0x9bdba15f79a2a534825717b5cd4285b78ec7e232c9610419fd6222476b4c092d`
-- Canonical input used for this review: `nextgen/runtime/MAINNET_CANONICAL_PROVENANCE.json` in the preparation workspace. This candidate carries a current-only deployment projection rather than unrelated historical manifests.
-- Contract address/runtime inventory (including source-publication status):
+- Network: Robinhood Mainnet
+- Chain ID: `4663`
+- Canonical generation: `0x9bdba15f79a2a534825717b5cd4285b78ec7e232c9610419fd6222476b4c092d`
+- Contract addresses and runtime fingerprints:
   [`docs/MAINNET_DEPLOYMENTS.json`](docs/MAINNET_DEPLOYMENTS.json)
 
-The formal source closure contains 36 Solidity files and has SHA-256
-`8573ba698181bbb1aa453eccb2a1df55d4bd446954a76931c66e66c4ee7fec4d`. This
-candidate contains the 27 Solidity source units needed to build the eight
-included implementations. Four deployed implementations are intentionally
-omitted, so this package cannot reproduce the full-closure digest or rebuild
-all twelve contracts.
+The source scope was prepared against the canonical provenance record for this
+generation. A read-only chain check at block `85894438` (2026-10-11
+`14:14:38 UTC`) found that the runtime bytecode of the eight included
+contracts matched the recorded canonical runtime fingerprints. This is a
+dated identity check, not a guarantee about future chain state.
 
 ## Included implementations
 
@@ -35,49 +32,51 @@ all twelve contracts.
 | `B6PWChainlinkETHUSDAdapterNG` | `0xDa230c98c9B418e6A504771AbdFF2F613592a977` | `0x636df45aa78301617a01655f2c8c2a1bf1681f3040f2409a1707d178fd07066a` |
 | `B6PWMarketBusinessNG` | `0x4A9B3967c1E2736007Ba91DEc2C5303Da380c6fd` | `0xd14c8b4bdedfc027eab8b97462e6ff11716798460b766ece6a51a4766b709e06` |
 
-## Build and source identity
+## Build and included dependencies
 
-Build with Foundry and Solidity `0.8.24`, optimizer enabled for 200 runs,
-`via_ir = false`, EVM target `paris`:
+The package contains eight contract implementations, sixteen interface files,
+and three libraries. Build with Foundry and Solidity `0.8.24`, optimizer
+enabled for 200 runs, `via_ir = false`, and EVM target `paris`:
 
 ```sh
 forge build --offline --no-cache
 ```
 
-The local isolated build compiled all eight included contract implementations
-and their 19 exact imported source units. Its contract ABI, metadata, creation
-bytecode, and deployed-bytecode template matched the corresponding formal
-build artifacts. The canonical Mainnet `eth_getCode` recheck recorded in the
-013 evidence is a historical snapshot at block `82909508` on 2026-10-08; this
-candidate does not claim a fresh chain read at publication time. See the
-canonical provenance and internal review evidence before relying on identity.
+The isolated review build compiled the eight implementations and their exact
+source dependencies. The reviewed ABI, metadata, creation bytecode, deployed
+bytecode template, link references, and normalized immutable locations matched
+the corresponding canonical build artifacts.
 
-The shared source dependencies are copied unchanged. The user has approved
-publication of the compile-required interface declarations, including
-platform/batch names and data shapes. `IPlatformAccounting.sol` declares
-`batchCreate`, Registrar and special-stake methods; `ICustody.sol` declares
-custody-admin and platform-binding methods. These declarations expose ABI
-surfaces, not the four omitted contract implementations or their operational
-tools. See [`SOURCE_SCOPE.md`](SOURCE_SCOPE.md) for the exact boundary.
+Some included interface declarations describe platform administration,
+Registrar, batch, special-stake, or custody operations. These are interface
+declarations only. The implementations behind those declarations, including
+the following four deployed contracts, remain private and are not included:
 
-## Publication boundary
+- `B6PWPlatformAccountingKernelNG`
+- `B6PWGovernanceConfigNG`
+- `B6PWPlatformBatchOperatorNG`
+- `B6PWCustodyNG`
 
-The four other deployed contract implementations are intentionally absent.
-This repository subset does not claim that their source is public, nor that the
-entire deployed system can be independently rebuilt from this package. The
-private batch-registration tools, operational scripts, platform wallet tools,
-backend, frontend, deployment materials, and Git history are also absent.
+Platform batch-registration programs, internal operations and administration
+tools, wallet tools, backend and frontend code, deployment credentials, and
+internal Git history are also excluded. This subset cannot rebuild the full
+twelve-contract deployment.
 
-MIT applies only to the included B6PW-authored materials whose rights are
-controlled by B6PW. No third-party Solidity source dependency is bundled here;
-any separately obtained tooling remains under its own license.
+## License
 
-## Known issue
+The included `LICENSE` is MIT. It applies only to B6PW-authored materials that
+B6PW has the right to license. No third-party Solidity source dependency is
+bundled in this package; separately obtained tools and dependencies remain
+subject to their own licenses.
 
-NG-P2-001 is disclosed as
-`KNOWN_CORE_DEFECT_OPERATIONALLY_MITIGATED`. The source defect is **not fixed**;
-the mitigation is an operational policy. See
+## Known issue and review limits
+
+`NG-P2-001` is classified as
+`KNOWN_CORE_DEFECT_OPERATIONALLY_MITIGATED`: operational measures mitigate
+the issue, but the source code has **not** been fixed. See
 [`docs/security/NG-P2-001.md`](docs/security/NG-P2-001.md).
 
-This package is not published and is not a release authorization or a user
-sign-off record.
+The documented ownership/platform-accounting callback review and source/runtime
+checks are limited to their stated scope. Passing those checks does not mean
+that the complete B6PW system has no vulnerabilities, and this repository is
+not a claim of a full-system security audit.
