@@ -51,7 +51,7 @@
     "rpcEndpoint": "Robinhood Official Public RPC",
     "contractsMatched": "12/12"
   },
-  "publicSourceCount": 5,
+  "publicSourceCount": 8,
   "totalCanonicalContracts": 12,
   "contracts": [
     {
@@ -64,7 +64,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": false,
       "sourcePath": null,
-      "sourceVerification": "Source intentionally excluded from candidate"
+      "sourceVerification": "Canonical implementation intentionally excluded from this 8-of-12 source candidate; runtime identity retained from canonical provenance"
     },
     {
       "order": 2,
@@ -74,9 +74,9 @@
       "runtimeKeccak256": "0xb2269015dbdb32f7a949ff6ba7a1eb99580a722c3ca0fdfbd2206b5c68dbc518",
       "runtimeBytes": 15866,
       "status": "CANONICAL_MAINNET",
-      "sourcePublished": false,
-      "sourcePath": null,
-      "sourceVerification": "Source intentionally excluded from candidate"
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWOwnershipCoreNG.sol",
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; no fresh live-chain read in this task"
     },
     {
       "order": 3,
@@ -86,9 +86,9 @@
       "runtimeKeccak256": "0xaba8f6256a261653a5ffd404ea7e330ca7fba8545a2f87d2be85365caa36275b",
       "runtimeBytes": 24393,
       "status": "CANONICAL_MAINNET",
-      "sourcePublished": false,
-      "sourcePath": null,
-      "sourceVerification": "Source intentionally excluded from candidate"
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWStakeLedgerNG.sol",
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; no fresh live-chain read in this task"
     },
     {
       "order": 4,
@@ -98,9 +98,9 @@
       "runtimeKeccak256": "0x5c1e5b4d147032aa87ecef92e9e0e68dd6f9d228bf17210ae15850bbc82cdeb6",
       "runtimeBytes": 18297,
       "status": "CANONICAL_MAINNET",
-      "sourcePublished": false,
-      "sourcePath": null,
-      "sourceVerification": "Source intentionally excluded from candidate"
+      "sourcePublished": true,
+      "sourcePath": "src/B6PWSettlementKernelNG.sol",
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; no fresh live-chain read in this task"
     },
     {
       "order": 5,
@@ -124,7 +124,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": true,
       "sourcePath": "src/B6PWQuotePolicyHubNG.sol",
-      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; canonical provenance records 12/12 runtime verification; no fresh live-chain read in this task"
     },
     {
       "order": 7,
@@ -136,7 +136,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": true,
       "sourcePath": "src/B6PWOracleDirectoryNG.sol",
-      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; canonical provenance records 12/12 runtime verification; no fresh live-chain read in this task"
     },
     {
       "order": 8,
@@ -148,7 +148,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": true,
       "sourcePath": "src/B6PWSpotSourceNG.sol",
-      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; canonical provenance records 12/12 runtime verification; no fresh live-chain read in this task"
     },
     {
       "order": 9,
@@ -160,7 +160,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": true,
       "sourcePath": "src/B6PWChainlinkETHUSDAdapterNG.sol",
-      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; canonical provenance records 12/12 runtime verification; no fresh live-chain read in this task"
     },
     {
       "order": 10,
@@ -172,7 +172,7 @@
       "status": "CANONICAL_MAINNET",
       "sourcePublished": true,
       "sourcePath": "src/B6PWMarketBusinessNG.sol",
-      "sourceVerification": "Exact candidate source/build artifact match; historical Mainnet runtime recheck match"
+      "sourceVerification": "Canonical source included unchanged; compiler artifact comparison is documented in 901D evidence; canonical provenance records 12/12 runtime verification; no fresh live-chain read in this task"
     },
     {
       "order": 11,
